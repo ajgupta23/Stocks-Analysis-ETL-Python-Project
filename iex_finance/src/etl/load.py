@@ -23,11 +23,6 @@ class Load():
         Input Parameters:
         - df: pandas dataframe to load.  
         - load_target: choose either `file` or `database`.
-        - load_method: choose either `overwrite` or `upsert`. defaults to `overwrite`. 
-        - target_file_directory: directory where the file will be written to in parquet format.
-        - target_file_name: name of the target file e.g. stock.parquet. 
-        - target_database_engine: SQLAlchemy engine for the target database. 
-        - target_table_name: name of the SQL table to create and/or upsert data to. 
         """
 
         if load_target.lower() == "file": 
