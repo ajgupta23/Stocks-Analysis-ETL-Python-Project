@@ -21,13 +21,13 @@ class Transform():
 
         #Adding column datetime that includes date and time both. Conversion of minutes into 24-hours format.
         df["datetime"] = pd.to_datetime(df["minute"])
-        #Droping columns "date", "minutes" and labels, added datetime in prior step
+        #Droping columns "date", "minutes" and labels, added datetime in prior step.
         df = df.drop(df.columns[[0,1,2]],axis=1)
         #Difference between open and close value across rows.
         df["difference"] = (df["close"]-df["open"])
         #Creation of new dataframe to analyse the raw dataframe for per day stock vlues.
         df1 = pd.DataFrame()
-        #MAX AND MINOF OPEN , CLOSE, HIGH, LOW VALUE GROUPING ON PER STOCK BASIS and APPLYING LAMBDA FUNCTION
+        # max()  and min() of  OPEN , CLOSE, HIGH, LOW value on per stock  and applying LAMBDA function.
         df1["max_open_value_per_day"] = df.groupby('stock_code').apply(lambda df: df["open"].max())
         df1["min_open_value_per_day"] = df.groupby('stock_code').apply(lambda df: df["open"].min())
         df1["max_close_value_per_day"] = df.groupby('stock_code').apply(lambda df: df["close"].max())
@@ -39,7 +39,7 @@ class Transform():
         # Difference sum for per stock
         df1["status_difference"] = df.groupby("stock_code").apply(lambda df: df["difference"].sum())
 
-        #MEAN VALUE FOR trades and volume PER DAY PER STOCK THROUGH GROUPING BY STOCK CODE AND LAMBDA FUNCTION APPLYING.
+        #mean() value for trades and volume on per stock by grouby() function and lambda mapping.
         df1["trades_mean"] = df.groupby("stock_code").apply(lambda df: df["numberoftrades"].mean())
         df1["volume_mean"] = df.groupby("stock_code").apply(lambda df: df["volume"].mean())
         
