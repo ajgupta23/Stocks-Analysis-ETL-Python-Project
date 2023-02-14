@@ -13,10 +13,6 @@ class Extract():
         - iex_api_key: api key 
         - stock_ticker: code of the stock e.g. AAPL for APPLE stock
         """       
-        headers = {
-            "token" : iex_api_key
-        }
-
         params = {
             "token" : iex_api_key
         }
