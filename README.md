@@ -66,6 +66,7 @@ The extraction part takes out table with columns as json file:
         "numberOfTrades": 20,
         "changeOverTime": -0.0039,
     }
+
 The above "x" doesn't contains stock_code, so in the final extrcated data "stock_code" for each "x" is appended.So,the each row contains columns "stock_code" as extra element.
 
 ## Transformations
