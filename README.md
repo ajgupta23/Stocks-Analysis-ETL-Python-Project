@@ -163,4 +163,5 @@ Table name can be stocks_intraday, staging_stocks, pipeline_logs
 
 ## Links:
 https://hub.docker.com/repository/docker/ajaygupta9124/stock/general
+
 https://iexcloud.io/docs/api/#intraday-prices
